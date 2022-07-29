@@ -1,0 +1,92 @@
+@mixin for-mobile-min {
+  @media (max-width: 354.98px) {
+    @content;
+  }
+}
+
+@mixin for-mobile {
+  @media (max-width: 575.98px) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (max-width: 991.98px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-sm {
+  @media (max-width: 1360.98px) {
+    @content;
+  }
+}
+
+$brand-light-red: #E30611;
+$icons-light-tertiary: #BBC1C7;
+$text-light-secondary: #626C77;
+
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-feature-settings: 'tnum' off, 'lnum' off;
+
+  &.primary {
+    li::before {
+      background: $brand-light-red;
+    }
+  }
+
+  &.tertiary {
+    li::before {
+      background: $icons-light-tertiary;
+    }
+  }
+
+  &.dark {
+    li::before {
+      background: $text-light-secondary;
+    }
+  }
+
+  li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 20px;
+    line-height: 28px;
+    @include for-tablet {
+      padding-left: 18px;
+      font-size: 17px;
+      line-height: 24px;
+    }
+    @include for-mobile {
+      padding-left: 16px;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 11px;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      content: '';
+      @include for-tablet {
+        top: 10px;
+        width: 6px;
+        height: 6px;
+      }
+      @include for-mobile {
+        top: 11px;
+        width: 4px;
+        height: 4px;
+      }
+    }
+  }
+}

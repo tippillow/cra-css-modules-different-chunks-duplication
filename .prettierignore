@@ -1,0 +1,6 @@
+/build
+/config
+/scripts
+/node_modules
+/src/backend
+/public/widget
