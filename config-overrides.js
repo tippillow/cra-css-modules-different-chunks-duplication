@@ -5,10 +5,10 @@ module.exports = {
       name: false,
       cacheGroups: {
         commons: {
+          //Tells webpack to ignore splitChunks.minSize, splitChunks.minChunks, splitChunks.maxAsyncRequests and splitChunks.maxInitialRequests options and always create chunks for this cache group.
           enforce:true,
           test: /[\\/]shared[\\/]/,
           name: "shared",
-          //Tells webpack to ignore splitChunks.minSize, splitChunks.minChunks, splitChunks.maxAsyncRequests and splitChunks.maxInitialRequests options and always create chunks for this cache group.
           chunks: 'all',
         },
       },
