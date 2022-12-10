@@ -1,7 +1,6 @@
 import React from 'react';
-
-import { List } from './List';
-import { ListBulletColorsEnum } from './ListBulletColorsEnum';
+import { ListBulletColorsEnum } from './shared/ListBulletColorsEnum';
+import { List } from './shared/List';
 
 export const bannerListItems: Array<string> = [
   'texttext',
